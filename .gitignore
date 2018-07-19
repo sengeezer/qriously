@@ -72,5 +72,6 @@ typings/
 # Serverless directories
 .serverless
 
-# Libraries build folder
+# Build folders
 /lib/
+/dist/
