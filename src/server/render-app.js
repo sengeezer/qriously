@@ -1,4 +1,3 @@
-
 import { STATIC_PATH } from '../shared/config';
 
 const renderApp = title => `
@@ -6,7 +5,7 @@ const renderApp = title => `
 <html>
   <head>
     <title>${title}</title>
-    <link rel="stylesheet" href="${STATIC_PATH}/css/style.css">
+    <link href="${STATIC_PATH}/css/styles.css" rel="stylesheet">
   </head>
   <body>
     <h1>${title}</h1>
