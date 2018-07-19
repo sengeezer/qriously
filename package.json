@@ -1,0 +1,10 @@
+{
+  "name": "fe-test-app",
+  "version": "0.0.1",
+  "description": "Qriously Front End Test",
+  "main": "index.js",
+  "repository": "https://github.com/sengeezer/frontenddeveloper",
+  "author": "Fabio M. Albertin",
+  "license": "MIT",
+  "private": true
+}
