@@ -8,7 +8,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "babel-node src/server",
+    "start": "yarn dev:start",
+    "dev:start": "nodemon --ignore lib --exec babel-node src/server",
+    "prod:build": "rimraf lib && babel src -d lib --ignore .test.js",
     "lint": "eslint src"
   },
   "browserslist": [
@@ -22,7 +24,9 @@
     "eslint-plugin-compat": "^2.5.0",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.9.1"
+    "eslint-plugin-react": "^7.9.1",
+    "nodemon": "^1.18.3",
+    "rimraf": "^2.6.2"
   },
   "dependencies": {
     "express": "^4.16.3"
