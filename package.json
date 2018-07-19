@@ -6,5 +6,12 @@
   "repository": "https://github.com/sengeezer/frontenddeveloper",
   "author": "Fabio M. Albertin",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "scripts": {
+    "start": "babel-node src"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
 }
