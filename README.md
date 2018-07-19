@@ -1,5 +1,7 @@
 # Qriously Front End Test
 
+Instructions: https://github.com/qriously/frontenddeveloper
+
 * To install dependencies, run `yarn` from the root folder.
 
 ## Credits
