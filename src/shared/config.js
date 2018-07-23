@@ -1,5 +1,5 @@
 export const WEB_PORT = process.env.PORT || 8000;
-export const WDS_PORT = 7000;
+export const WDS_PORT = 7001;
 export const STATIC_PATH = '/public';
 
 export const APP_NAME = 'Front End Test';
