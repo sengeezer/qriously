@@ -18,6 +18,10 @@
   "browserslist": [
     "> 1%"
   ],
+  "engines": {
+    "node": ">=8.9.0",
+    "npm": ">=6.1.0"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
