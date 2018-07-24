@@ -9,10 +9,10 @@ API call example:
 
 import 'isomorphic-fetch';
 
-import { helloEndpointRoute } from '../../shared/routes';
+import { answerIdRoute } from '../../shared/routes';
 
-const callAPI = () => {
-  return fetch(helloEndpointRoute(num), { method: 'GET' })
+const callAPI = (id) => {
+  return fetch(answerIdRoute(id), { method: 'GET' })
     .then((res) => {
       if (!res.ok) {
         throw Error(res.statusText);

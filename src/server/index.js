@@ -5,7 +5,7 @@ import { isProd } from '../shared/util';
 
 import renderApp from './render-app';
 
-import { helloEndpointRoute, answerIdRoute } from '../shared/routes';
+import { answerIdRoute } from '../shared/routes';
 
 const app = express();
 
@@ -16,12 +16,9 @@ app.get('/', (req, res) => {
   res.send(renderApp(APP_NAME));
 });
 
-app.get(helloEndpointRoute(), (req, res) => {
-  res.json({ serverMessage: `Hello from the server! (received ${req.params.num})` });
-});
-
 app.get(answerIdRoute(), (req, res) => {
   const answerId = Number(req.query.id);
+
   if (answerId === 1 || answerId === 2 || answerId === 3) {
     res.status(200).send(JSON.stringify({
       result: [
