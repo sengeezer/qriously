@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 
 app.get(answerIdRoute(), (req, res) => {
   const answerId = Number(req.query.id);
-
+  console.log(req.query.id);
   if (answerId === 1 || answerId === 2 || answerId === 3) {
     res.status(200).send(JSON.stringify({
       result: [
