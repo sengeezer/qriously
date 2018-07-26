@@ -1,1 +1,8 @@
-<div class="container">{{title}}</div>
+<div class="container">
+  <h3>{{question}}</h3>
+  <ul>
+    {{#each answers}}
+      <li data-answerId="{{id}}">{{label}}</li>
+    {{/each}}
+  </ul>
+</div>

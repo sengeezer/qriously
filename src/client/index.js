@@ -6,10 +6,11 @@ import './styles/styles.scss';
 
 import { answerIdRoute } from '../shared/routes';
 import { APP_CONTAINER_SELECTOR } from '../shared/config';
+import data from './config';
 
 const pageTemplate = require('./templates/page.hbs');
 
-document.querySelector(APP_CONTAINER_SELECTOR).innerHTML = pageTemplate({ title: 'Octagon squares' });
+document.querySelector(APP_CONTAINER_SELECTOR).innerHTML = pageTemplate(data);
 
 const callAPI = (id) => {
   return fetch(`${answerIdRoute()}?id=${id}`, { method: 'GET' })
