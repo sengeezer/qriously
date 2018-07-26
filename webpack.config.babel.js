@@ -19,6 +19,7 @@ export default {
         test: /\.s?css$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
+      { test: /\.hbs$/, loader: 'handlebars-loader' },
     ],
   },
   devtool: isProd ? false : 'source-map',

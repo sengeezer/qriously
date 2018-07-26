@@ -1,6 +1,9 @@
 import 'babel-polyfill';
 import 'isomorphic-fetch';
 
+import 'normalize.css/normalize.css';
+import './styles/styles.scss';
+
 import { answerIdRoute } from '../shared/routes';
 import { APP_CONTAINER_SELECTOR } from '../shared/config';
 
