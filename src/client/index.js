@@ -7,8 +7,9 @@ import './styles/styles.scss';
 import { answerIdRoute } from '../shared/routes';
 import { APP_CONTAINER_SELECTOR } from '../shared/config';
 
+const pageTemplate = require('./templates/page.hbs');
 
-document.querySelector(APP_CONTAINER_SELECTOR).innerHTML = '<h1>Hello World!</h1>';
+document.querySelector(APP_CONTAINER_SELECTOR).innerHTML = pageTemplate({ title: 'Octagon squares' });
 
 const callAPI = (id) => {
   return fetch(`${answerIdRoute()}?id=${id}`, { method: 'GET' })

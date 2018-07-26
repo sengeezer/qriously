@@ -6,11 +6,10 @@ const renderApp = title => `
 <html>
   <head>
     <title>${title}</title>
-    <link href="${STATIC_PATH}/css/styles.css" rel="stylesheet">
   </head>
   <body>
-  <div class="${APP_CONTAINER_CLASS}"></div>
-  <script src="${isProd ? STATIC_PATH : `http://localhost:${WDS_PORT}/dist`}/js/bundle.js"></script>
+    <div class="${APP_CONTAINER_CLASS}"></div>
+    <script src="${isProd ? STATIC_PATH : `http://localhost:${WDS_PORT}/dist`}/js/bundle.js"></script>
   </body>
 </html>
 `;
