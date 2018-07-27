@@ -1,0 +1,22 @@
+.question {
+  margin: 0;
+  padding: 0;
+  background-color: darkslategray;
+
+  h3 {
+    color: bisque;
+    padding: $small;
+  }
+
+  ul.answersList {
+    list-style: none;
+    padding: 0 0 $small;
+  
+    li {
+      padding: $medium;
+      margin: $small;
+      background-color: bisque;
+      border-radius: 0.5rem;
+    }
+  }
+}

@@ -1,8 +1,10 @@
 <div class="container">
-  <h3>{{question}}</h3>
-  <ul>
-    {{#each answers}}
-      <li data-answerId="{{id}}">{{label}}</li>
-    {{/each}}
-  </ul>
+  <div class="question">
+    <h3>{{question}}</h3>
+    <ul class="answersList">
+      {{#each answers}}
+        <li data-answerId="{{id}}">{{label}}</li>
+      {{/each}}
+    </ul>
+  </div>
 </div>
