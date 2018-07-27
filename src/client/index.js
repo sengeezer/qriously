@@ -1,5 +1,6 @@
 import 'babel-polyfill';
 import 'isomorphic-fetch';
+import ZingTouch from 'zingtouch';
 
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
@@ -11,6 +12,21 @@ import confData from './config';
 const pageTemplate = require('./templates/page.hbs');
 
 document.querySelector(APP_CONTAINER_SELECTOR).innerHTML = pageTemplate(confData);
+
+const ztRegion = ZingTouch.Region(document.getElementById('container'));
+
+const answers = document.getElementsByTagName('li');
+const answerEls = Object.entries(answers);
+
+answerEls.forEach((item, i) => {
+  ztRegion.bind(item[1], 'tap', (ev) => {
+    console.log(ev);
+  });
+});
+
+// ztRegion.bind(document.getElementsByTagName('li')[0], 'tap', (ev) => {
+//   console.log(ev);
+// });
 
 const callAPI = id => fetch(`${answerIdRoute()}?id=${id}`, { method: 'GET' })
   .then((res) => {

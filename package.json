@@ -48,6 +48,7 @@
     "node-sass": "^4.9.2",
     "normalize.css": "^8.0.0",
     "sass-loader": "^7.0.3",
-    "style-loader": "^0.21.0"
+    "style-loader": "^0.21.0",
+    "zingtouch": "^1.0.6"
   }
 }
