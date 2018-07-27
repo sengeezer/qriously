@@ -15,36 +15,30 @@ document.querySelector(APP_CONTAINER_SELECTOR).innerHTML = pageTemplate(confData
 
 const ztRegion = ZingTouch.Region(document.getElementById('container'));
 
+const callAPI = (id) => {
+  fetch(`${answerIdRoute()}?id=${id}`, { method: 'GET' })
+    .then((res) => {
+      if (!res.ok) {
+        throw Error(res.statusText);
+      }
+
+      return res.json();
+    })
+    .then((data) => {
+      // do something with the data here
+      console.log(data);
+    })
+    .catch(() => {
+      // catch the error
+    });
+};
+
 const answers = document.getElementsByTagName('li');
 const answerEls = Object.entries(answers);
 
 answerEls.forEach((item, i) => {
   ztRegion.bind(item[1], 'tap', (ev) => {
-    console.log(ev);
+    // console.log(ev.target.getAttribute('data-answerid'));
+    callAPI(ev.target.getAttribute('data-answerid'));
   });
 });
-
-// ztRegion.bind(document.getElementsByTagName('li')[0], 'tap', (ev) => {
-//   console.log(ev);
-// });
-
-const callAPI = id => fetch(`${answerIdRoute()}?id=${id}`, { method: 'GET' })
-  .then((res) => {
-    if (!res.ok) {
-      throw Error(res.statusText);
-    }
-
-    return res.json();
-  })
-  .then((data) => {
-    if (!data.serverMessage) {
-      throw Error('No message received');
-    }
-    // do something with the data here
-    console.log(data);
-  })
-  .catch(() => {
-    // catch the error
-  });
-
-callAPI(1);
