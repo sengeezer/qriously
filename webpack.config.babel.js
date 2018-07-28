@@ -14,7 +14,11 @@ export default {
   },
   module: {
     rules: [
-      { test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ },
+      {
+        test: /\.(js|jsx)$/,
+        use: 'babel-loader',
+        exclude: /node_modules\/(?!(dom7|ssr-window|swiper)\/).*/,
+      },
       {
         test: /\.s?css$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],

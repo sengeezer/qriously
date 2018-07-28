@@ -38,7 +38,6 @@ const answerEls = Object.entries(answers);
 
 answerEls.forEach((item, i) => {
   ztRegion.bind(item[1], 'tap', (ev) => {
-    // console.log(ev.target.getAttribute('data-answerid'));
     callAPI(ev.target.getAttribute('data-answerid'));
   });
 });
