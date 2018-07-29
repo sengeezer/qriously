@@ -27,6 +27,7 @@ const callAPI = (id) => {
     })
     .then((data) => {
       document.querySelector('.result').innerHTML = resultTemplate(data);
+      document.querySelector('.question').classList.toggle('hidden');
     })
     .catch((err) => {
       throw new Error(err);
@@ -36,7 +37,7 @@ const callAPI = (id) => {
 const answers = document.getElementsByTagName('li');
 const answerEls = Object.entries(answers);
 
-answerEls.forEach((item, i) => {
+answerEls.forEach((item) => {
   const hammerOpt = new Hammer(item[1]);
   hammerOpt.on('tap', (ev) => {
     callAPI(ev.target.getAttribute('data-answerid'));
@@ -45,10 +46,7 @@ answerEls.forEach((item, i) => {
 
 hammer.get('pan').set({ threshold: 30 });
 
-hammer.on('pan', (ev) => {
-  console.log(ev.target);
-});
-
 hammer.on('panend', () => {
-  console.log('pan has petered');
+  document.querySelector('.question').classList.toggle('hidden');
+  document.querySelector('.slider').classList.toggle('hidden');
 });
