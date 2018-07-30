@@ -6,14 +6,16 @@ import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
 import { APP_CONTAINER_SELECTOR } from '../shared/config';
-import confData from './config';
-
 import callAPI from './callAPI';
+
+// Set up question
+import confData from './config';
 
 const pageTemplate = require('./templates/page.hbs');
 
 document.querySelector(APP_CONTAINER_SELECTOR).innerHTML = pageTemplate(confData);
 
+// Handle gestures
 const slideHammer = new Hammer(document.querySelector('.slider'));
 const hammer = new Hammer(document.getElementById('answerRange'));
 
