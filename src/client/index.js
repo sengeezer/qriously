@@ -5,34 +5,17 @@ import Hammer from 'hammerjs';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
-import { answerIdRoute } from '../shared/routes';
 import { APP_CONTAINER_SELECTOR } from '../shared/config';
 import confData from './config';
 
+import callAPI from './callAPI';
+
 const pageTemplate = require('./templates/page.hbs');
-const resultTemplate = require('./templates/result.hbs');
 
 document.querySelector(APP_CONTAINER_SELECTOR).innerHTML = pageTemplate(confData);
 
+const slideHammer = new Hammer(document.querySelector('.slider'));
 const hammer = new Hammer(document.getElementById('answerRange'));
-
-const callAPI = (id) => {
-  fetch(`${answerIdRoute()}?id=${id}`, { method: 'GET' })
-    .then((res) => {
-      if (!res.ok) {
-        throw Error(res.statusText);
-      }
-
-      return res.json();
-    })
-    .then((data) => {
-      document.querySelector('.result').innerHTML = resultTemplate(data);
-      document.querySelector('.question').classList.toggle('hidden');
-    })
-    .catch((err) => {
-      throw new Error(err);
-    });
-};
 
 const answers = document.getElementsByTagName('li');
 const answerEls = Object.entries(answers);
@@ -42,6 +25,11 @@ answerEls.forEach((item) => {
   hammerOpt.on('tap', (ev) => {
     callAPI(ev.target.getAttribute('data-answerid'));
   });
+});
+
+slideHammer.on('tap', () => {
+  document.querySelector('.question').classList.toggle('hidden');
+  document.querySelector('.slider').classList.toggle('hidden');
 });
 
 hammer.get('pan').set({ threshold: 30 });
