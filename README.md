@@ -1,10 +1,19 @@
 # Qriously Front End Test
 
-* Instructions: https://github.com/qriously/frontenddeveloper
+## Instructions
 
----
+### Versions used
+
+* Node: >=8.9.0
+* NPM: >=6.1.0
+
+### Install and run
 
 * To install dependencies, run `yarn` from the root folder.
+* To run the backend, use `yarn start`.
+* To run the frontend, use `yarn dev:wds`.
+
+The app will then run on http://localhost:8000
 
 ## Notes
 
