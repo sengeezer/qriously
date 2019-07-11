@@ -36,7 +36,7 @@
     "nodemon": "^1.18.3",
     "rimraf": "^2.6.2",
     "webpack": "^3.12.0",
-    "webpack-dev-server": "^2.11.2"
+    "webpack-dev-server": "^3.1.11"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
